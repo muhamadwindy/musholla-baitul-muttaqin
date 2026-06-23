@@ -1,8 +1,11 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Hadith from '@/components/Hadith';
 import History from '@/components/History';
 import Programs from '@/components/Programs';
+import Infaq from '@/components/Infaq';
+import Itikaf from '@/components/Itikaf';
 import Location from '@/components/Location';
 import Footer from '@/components/Footer';
 
@@ -12,8 +15,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Hadith />
       <History />
       <Programs />
+      <Infaq />
+      <Itikaf />
       <Location />
       <Footer />
     </main>

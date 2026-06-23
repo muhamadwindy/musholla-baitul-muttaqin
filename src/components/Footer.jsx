@@ -5,6 +5,8 @@ const quickLinks = [
   { label: 'Tentang', href: '#tentang' },
   { label: 'Sejarah', href: '#sejarah' },
   { label: 'Program Kegiatan', href: '#program' },
+  { label: 'Infaq', href: '#infaq' },
+  { label: "I'tikaf & Musafir", href: '#itikaf' },
   { label: 'Lokasi', href: '#lokasi' },
 ];
 
