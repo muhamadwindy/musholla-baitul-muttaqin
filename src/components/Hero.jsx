@@ -184,8 +184,8 @@ export default function Hero() {
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
               </svg>
               <p className="text-white text-sm font-medium">
-                Marilah sholat berjamaah bersama kami —{' '}
-                <span className="text-amber-300 font-semibold">terbuka untuk seluruh umat Muslim</span>
+                Kami mengundang seluruh umat Muslim{' '}
+                <span className="text-amber-300 font-semibold">untuk hadir dan sholat berjamaah</span>
               </p>
             </div>
 
