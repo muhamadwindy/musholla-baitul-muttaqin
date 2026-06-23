@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 
 const timeline = [
@@ -38,6 +41,8 @@ const timeline = [
 ];
 
 export default function History() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section id="sejarah" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,46 +172,64 @@ export default function History() {
               kecil yang biasa disebut langgar. Dalam memaksimalkan kegiatan tersebut tentunya perlu tempat khusus agar
               bisa berjalan dengan baik. Atas inisiatif dari para tokoh dan aparat desa setempat, sekitar tahun 1960
               didirikanlah sebuah bangunan yang terdiri dari 3 bagian yaitu tempat sholat, tempat berkumpul dan kajian
-              dan tempat belajar baca tulis al quran.
+              dan tempat belajar baca tulis al quran. <span className="text-gray-400">Bangunan tersebut berdiri di atas tanah yang diwakafkan oleh Mbah Marinah...</span>
             </p>
-            <p>
-              Bangunan tersebut berdiri di atas tanah yang diwakafkan oleh <strong>Mbah Marinah</strong> yang dimana
-              beliau adalah ibunda dari tokoh agama setempat yang bernama <strong>Bapak Rojikan</strong>. Bangunan
-              tersebut dibangun dengan menggunakan kayu, papan dan genteng yang berasal dari swadaya masyarakat.
-              Menurut masyarakat sekitar, tempat sholat dan TPA yang ada pada waktu itu masih beralaskan tanah
-              sehingga dibuatkan anyaman bambu yang dianyam atau disusun sehingga membentuk persegi panjang yang
-              dibawahnya diberi batu besar di keempat sisinya supaya warga bisa beraktifitas diatasnya dan warga sekitar
-              biasa menyebutnya dengan &quot;<em>Dampar</em>&quot;. Seiring berjalannya waktu tempat tersebut diberikan tikar
-              bermerk &quot;<em>mendong</em>&quot; agar bisa beraktifias dengan lebih nyaman.
-            </p>
-            <p>
-              Setelah sekitar tahun 1990-an tempat tersebut direnovasi dari yang semula terbuat dari kayu dan bambu
-              menjadi bangunan permanen/beton dengan desain seorang arsitektur/tukang bangunan yang bernama{' '}
-              <strong>Mbah Jumar</strong> yang berasal dari dusun kalangan. Pada kala itu banyak sekali warga
-              masyarakat sekitar bahkan dari luar desa menimba ilmu di tempat tersebut mulai dari anak-anak yang
-              mulai belajar baca alquran, kegiatan kajian remaja sampai dengan pengajian ahad malam dan ahad legi
-              siang hari sehingga tempat tersebut terkenal dengan nama <strong>madrasah atau madrosah Baitul
-              Muttaqin</strong>.
-            </p>
-            <p>
-              Dengan semangat gotong royong dan rasa tanggung jawab terhadap keberlanjutan kegiatan keagamaan, pada
-              tahun 2002 bangunan tersebut direnovasi kembali dengan membuat bangunan menjadi full permanen, mengganti
-              genteng biasa dengan genteng beton, memasang plafon dan lain-lain. Ada cerita masyarakat setempat bahwa
-              tokoh masyarakat dahulu ingin jika tempat yang dibuat sholat itu selayaknya lebih tinggi atau setara dari
-              bangunan rumah warga.
-            </p>
-            <p>
-              Pada saat selesainya renovasi tepatnya tanggal <strong>4 Maret 2003 atau 1 Muharram 1424 H</strong>,
-              tempat ini langsung diresmikan oleh bupati semarang periode 1999-2006 yaitu bapak{' '}
-              <strong>H. Bambang Guritno, S.E., M.M.</strong> yang dimana kegiatan itu diabadikan dalam prasasti
-              yang saat ini dipasang di depan bangunan dengan nama <strong>Musholla Baitul Muttaqin</strong>.
-            </p>
-            <p>
-              Sampai saat ini tempat tersebut masih mengadakan kegiatan rutin dari jaman berdirinya musholla ini pada
-              1960an sampai dengan saat ini yaitu TPA, kajian rutin ahad malam dan ahad legi siang dan kegiatan
-              masyarakat lainnya.
-            </p>
+
+            {expanded && (
+              <>
+                <p>
+                  Bangunan tersebut berdiri di atas tanah yang diwakafkan oleh <strong>Mbah Marinah</strong> yang dimana
+                  beliau adalah ibunda dari tokoh agama setempat yang bernama <strong>Bapak Rojikan</strong>. Bangunan
+                  tersebut dibangun dengan menggunakan kayu, papan dan genteng yang berasal dari swadaya masyarakat.
+                  Menurut masyarakat sekitar, tempat sholat dan TPA yang ada pada waktu itu masih beralaskan tanah
+                  sehingga dibuatkan anyaman bambu yang dianyam atau disusun sehingga membentuk persegi panjang yang
+                  dibawahnya diberi batu besar di keempat sisinya supaya warga bisa beraktifitas diatasnya dan warga sekitar
+                  biasa menyebutnya dengan &quot;<em>Dampar</em>&quot;. Seiring berjalannya waktu tempat tersebut diberikan tikar
+                  bermerk &quot;<em>mendong</em>&quot; agar bisa beraktifias dengan lebih nyaman.
+                </p>
+                <p>
+                  Setelah sekitar tahun 1990-an tempat tersebut direnovasi dari yang semula terbuat dari kayu dan bambu
+                  menjadi bangunan permanen/beton dengan desain seorang arsitektur/tukang bangunan yang bernama{' '}
+                  <strong>Mbah Jumar</strong> yang berasal dari dusun kalangan. Pada kala itu banyak sekali warga
+                  masyarakat sekitar bahkan dari luar desa menimba ilmu di tempat tersebut mulai dari anak-anak yang
+                  mulai belajar baca alquran, kegiatan kajian remaja sampai dengan pengajian ahad malam dan ahad legi
+                  siang hari sehingga tempat tersebut terkenal dengan nama <strong>madrasah atau madrosah Baitul
+                  Muttaqin</strong>.
+                </p>
+                <p>
+                  Dengan semangat gotong royong dan rasa tanggung jawab terhadap keberlanjutan kegiatan keagamaan, pada
+                  tahun 2002 bangunan tersebut direnovasi kembali dengan membuat bangunan menjadi full permanen, mengganti
+                  genteng biasa dengan genteng beton, memasang plafon dan lain-lain. Ada cerita masyarakat setempat bahwa
+                  tokoh masyarakat dahulu ingin jika tempat yang dibuat sholat itu selayaknya lebih tinggi atau setara dari
+                  bangunan rumah warga.
+                </p>
+                <p>
+                  Pada saat selesainya renovasi tepatnya tanggal <strong>4 Maret 2003 atau 1 Muharram 1424 H</strong>,
+                  tempat ini langsung diresmikan oleh bupati semarang periode 1999-2006 yaitu bapak{' '}
+                  <strong>H. Bambang Guritno, S.E., M.M.</strong> yang dimana kegiatan itu diabadikan dalam prasasti
+                  yang saat ini dipasang di depan bangunan dengan nama <strong>Musholla Baitul Muttaqin</strong>.
+                </p>
+                <p>
+                  Sampai saat ini tempat tersebut masih mengadakan kegiatan rutin dari jaman berdirinya musholla ini pada
+                  1960an sampai dengan saat ini yaitu TPA, kajian rutin ahad malam dan ahad legi siang dan kegiatan
+                  masyarakat lainnya.
+                </p>
+              </>
+            )}
           </div>
+
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="mt-5 inline-flex items-center gap-1.5 text-green-700 font-semibold text-sm hover:text-green-800 transition-colors"
+          >
+            {expanded ? 'Sembunyikan' : 'Baca selengkapnya'}
+            <svg
+              className={`w-4 h-4 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

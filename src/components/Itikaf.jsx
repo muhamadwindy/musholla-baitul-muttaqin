@@ -14,8 +14,44 @@ const facilities = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
-    label: 'Tempat Wudhu & Toilet',
-    desc: 'Fasilitas wudhu dan kamar mandi yang bersih tersedia untuk jamaah',
+    label: 'Toilet & Kamar Mandi',
+    desc: 'Toilet dan kamar mandi bersih tersedia untuk jamaah dan tamu',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+      </svg>
+    ),
+    label: 'Tempat Wudhu',
+    desc: 'Tempat wudhu yang bersih dan memadai untuk persiapan ibadah',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    label: 'Sudut Baca Al-Quran',
+    desc: 'Tersedia Al-Quran dan tempat yang nyaman untuk tadarus dan tilawah',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    ),
+    label: 'Mukena',
+    desc: 'Tersedia mukena untuk dipinjam bagi muslimah yang membutuhkan',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+      </svg>
+    ),
+    label: 'Sarung',
+    desc: 'Sarung tersedia untuk dipinjam bagi jamaah atau musafir yang memerlukan',
   },
   {
     icon: (
@@ -25,6 +61,24 @@ const facilities = [
     ),
     label: 'Penerangan 24 Jam',
     desc: 'Musholla terbuka dengan penerangan sepanjang malam untuk kenyamanan jamaah',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+      </svg>
+    ),
+    label: 'Dapur',
+    desc: 'Fasilitas dapur tersedia untuk kegiatan memasak saat acara kemasyarakatan',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+      </svg>
+    ),
+    label: 'Kursi Pesta',
+    desc: 'Tersedia kursi dan peralatan pesta yang bisa dipinjam untuk acara warga',
   },
   {
     icon: (
@@ -172,7 +226,7 @@ export default function Itikaf() {
         {/* Facilities grid */}
         <div className="bg-green-800 rounded-2xl p-8 mb-10">
           <h3 className="font-bold text-white text-xl mb-6 text-center">Fasilitas yang Tersedia</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 grid-rows-2">
             {facilities.map((f) => (
               <div key={f.label} className="bg-white/10 border border-white/20 rounded-xl p-5 text-white">
                 <div className="w-10 h-10 bg-amber-400 rounded-lg flex items-center justify-center text-green-900 mb-3">

@@ -35,6 +35,33 @@ const infaqItems = [
     label: 'Fasilitas Musafir & I\'tikaf',
     desc: 'Penyediaan tempat istirahat, perlengkapan, dan kebutuhan tamu musafir',
   },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    label: 'Kemakmuran Jamaah',
+    desc: 'Mendukung kegiatan yang menyejahterakan dan memakmurkan jamaah musholla',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
+    label: 'Anak Yatim',
+    desc: 'Sebagian infaq disalurkan untuk membantu anak yatim di sekitar lingkungan musholla',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+      </svg>
+    ),
+    label: 'Kaum Dhuafa',
+    desc: 'Membantu warga kurang mampu di sekitar musholla sesuai kemampuan dan kebutuhan',
+  },
 ];
 
 export default function Infaq() {
@@ -65,7 +92,8 @@ export default function Infaq() {
             <p className="text-gray-600 leading-relaxed mb-6">
               Setiap rupiah yang Anda infaqkan akan digunakan sepenuhnya untuk memakmurkan Musholla Baitul
               Muttaqin — mulai dari operasional harian, kegiatan TPA, kajian rutin, hingga memfasilitasi
-              musafir dan pelaksanaan i&apos;tikaf.
+              musafir dan i&apos;tikaf. Sebagian infaq juga disalurkan untuk kemakmuran jamaah,
+              membantu anak yatim, dan meringankan beban kaum dhuafa di sekitar musholla.
             </p>
 
             <p className="text-gray-600 leading-relaxed mb-8">
