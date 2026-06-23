@@ -97,7 +97,7 @@ export default function Gallery() {
               src: '/images/musholla-prasasti.png',
               alt: 'Prasasti peresmian Musholla Baitul Muttaqin oleh Bupati Semarang',
               caption: 'Prasasti Peresmian Resmi',
-              desc: 'Prasasti marmer yang dipasang sejak peresmian 4 Maret 2003 / 1 Muharram 1424 H oleh H. Bambang Guritno, S.E., M.M.',
+              desc: 'Prasasti marmer yang dipasang sejak peresmian 4 Maret 2003 / 1 Muharram 1424 H oleh H. Bambang Guritno, S.E., M.B.A.',
             })
           }
           className="w-full group focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-2xl"
@@ -144,7 +144,7 @@ export default function Gallery() {
                     1 Muharram 1424 H / 4 Maret 2003 M
                   </p>
                   <p className="text-gray-800 text-sm font-bold mt-1">
-                    H. Bambang Guritno, S.E., M.M.
+                    H. Bambang Guritno, S.E., M.B.A.
                   </p>
                 </div>
               </div>

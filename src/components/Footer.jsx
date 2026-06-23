@@ -32,7 +32,7 @@ export default function Footer() {
             </p>
             <p className="text-green-300 text-xs">
               Diresmikan 4 Maret 2003 / 1 Muharram 1424 H<br />
-              oleh Bupati Semarang H. Bambang Guritno, S.E., M.M.
+              oleh Bupati Semarang H. Bambang Guritno, S.E., M.B.A.
             </p>
           </div>
 

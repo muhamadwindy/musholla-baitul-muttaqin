@@ -33,8 +33,8 @@ const timeline = [
     hijri: '1 Muharram 1424 H',
     title: 'Peresmian Resmi',
     description:
-      'Tepat pada tanggal 4 Maret 2003 atau 1 Muharram 1424 H, Musholla Baitul Muttaqin diresmikan oleh Bupati Semarang periode 1999–2006, Bapak H. Bambang Guritno, S.E., M.M. Peresmian ini diabadikan dalam prasasti yang terpasang di bagian depan bangunan.',
-    details: ['Diresmikan Bupati Semarang', 'H. Bambang Guritno, S.E., M.M.', 'Prasasti terpasang hingga kini'],
+      'Tepat pada tanggal 4 Maret 2003 atau 1 Muharram 1424 H, Musholla Baitul Muttaqin diresmikan oleh Bupati Semarang periode 1999–2006, Bapak H. Bambang Guritno, S.E., M.B.A. Peresmian ini diabadikan dalam prasasti yang terpasang di bagian depan bangunan.',
+    details: ['Diresmikan Bupati Semarang', 'H. Bambang Guritno, S.E., M.B.A.', 'Prasasti terpasang hingga kini'],
     color: 'amber',
     highlight: true,
   },
@@ -206,7 +206,7 @@ export default function History() {
                 <p>
                   Pada saat selesainya renovasi tepatnya tanggal <strong>4 Maret 2003 atau 1 Muharram 1424 H</strong>,
                   tempat ini langsung diresmikan oleh bupati semarang periode 1999-2006 yaitu bapak{' '}
-                  <strong>H. Bambang Guritno, S.E., M.M.</strong> yang dimana kegiatan itu diabadikan dalam prasasti
+                  <strong>H. Bambang Guritno, S.E., M.B.A.</strong> yang dimana kegiatan itu diabadikan dalam prasasti
                   yang saat ini dipasang di depan bangunan dengan nama <strong>Musholla Baitul Muttaqin</strong>.
                 </p>
                 <p>
