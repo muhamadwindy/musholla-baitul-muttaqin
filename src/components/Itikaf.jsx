@@ -107,7 +107,7 @@ export default function Itikaf() {
             I&apos;tikaf & Musafir
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Anda Sangat Welcome di Sini
+            Pintu Kami Selalu Terbuka untuk Anda
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Musholla Baitul Muttaqin membuka pintu selebar-lebarnya bagi siapa pun — baik untuk i&apos;tikaf,
