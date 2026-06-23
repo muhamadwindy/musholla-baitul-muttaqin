@@ -123,7 +123,7 @@ export default function History() {
                     {item.highlight && (
                       <div className="relative w-full h-36 rounded-xl overflow-hidden border border-amber-100">
                         <Image
-                          src="/images/musholla-prasasti.jpg"
+                          src="/images/musholla-prasasti.png"
                           alt="Prasasti peresmian Musholla Baitul Muttaqin oleh Bupati Semarang H. Bambang Guritno"
                           fill
                           className="object-cover object-center"

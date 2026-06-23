@@ -129,7 +129,7 @@ export default function Hero() {
       {/* ── Background photo ── */}
       <div className="absolute inset-0">
         <Image
-          src="/images/musholla-eksterior-2.jpg"
+          src="/images/musholla-eksterior-2.png"
           alt="Musholla Baitul Muttaqin"
           fill
           className="object-cover object-center"
@@ -156,18 +156,6 @@ export default function Hero() {
 
       {/* ── Content ── */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-10 flex flex-col gap-8">
-
-        {/* Logo */}
-        <div className="flex justify-center">
-          <Image
-            src="/logo.png"
-            alt="Musholla Baitul Muttaqin"
-            width={280}
-            height={100}
-            className="h-24 w-auto drop-shadow-2xl"
-            priority
-          />
-        </div>
 
         {/* ── Main content + Prayer times ── */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">

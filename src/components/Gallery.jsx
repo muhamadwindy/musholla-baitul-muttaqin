@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const photos = [
   {
-    src: '/images/musholla-eksterior-1.jpg',
+    src: '/images/musholla-eksterior-1.png',
     alt: 'Tampak depan Musholla Baitul Muttaqin',
     caption: 'Tampak Depan Musholla',
     desc: 'Bangunan musholla yang kokoh dengan arsitektur khas',
@@ -14,7 +14,7 @@ const photos = [
     height: 'h-52 sm:h-64',
   },
   {
-    src: '/images/musholla-iduladha.jpg',
+    src: '/images/musholla-iduladha.png',
     alt: 'Kegiatan Idul Adha bersama warga',
     caption: 'Kegiatan Idul Adha',
     desc: 'Gotong royong warga dalam kegiatan kurban Idul Adha',
@@ -23,7 +23,7 @@ const photos = [
     height: 'h-52 sm:h-64',
   },
   {
-    src: '/images/musholla-sholat-berjamaah.jpg',
+    src: '/images/musholla-sholat-berjamaah.png',
     alt: 'Jamaah shalat berjamaah di dalam musholla',
     caption: 'Shalat Berjamaah',
     desc: 'Jamaah yang khusyuk menunaikan shalat berjamaah',
@@ -32,7 +32,7 @@ const photos = [
     height: 'h-52 sm:h-64',
   },
   {
-    src: '/images/musholla-eksterior-2.jpg',
+    src: '/images/musholla-eksterior-2.png',
     alt: 'Tampak depan musholla dari sudut lain',
     caption: 'Suasana Musholla',
     desc: 'Tampak depan musholla dengan halaman yang bersih dan asri',
@@ -94,7 +94,7 @@ export default function Gallery() {
         <button
           onClick={() =>
             setLightbox({
-              src: '/images/musholla-prasasti.jpg',
+              src: '/images/musholla-prasasti.png',
               alt: 'Prasasti peresmian Musholla Baitul Muttaqin oleh Bupati Semarang',
               caption: 'Prasasti Peresmian Resmi',
               desc: 'Prasasti marmer yang dipasang sejak peresmian 4 Maret 2003 / 1 Muharram 1424 H oleh H. Bambang Guritno, S.E., M.M.',
@@ -106,7 +106,7 @@ export default function Gallery() {
             {/* Photo side */}
             <div className="relative w-full sm:w-1/2 h-56 sm:h-72 flex-shrink-0 overflow-hidden">
               <Image
-                src="/images/musholla-prasasti.jpg"
+                src="/images/musholla-prasasti.png"
                 alt="Prasasti peresmian Musholla Baitul Muttaqin"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
