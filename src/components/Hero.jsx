@@ -214,7 +214,7 @@ export default function Hero() {
                 Lihat Lokasi
               </a>
               <a
-                href="https://tarjih.or.id/"
+                href="https://khgt.muhammadiyah.or.id/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl transition-all text-sm"

@@ -128,7 +128,7 @@ export default function PrayerWidget() {
 
       {/* KHGT link */}
       <a
-        href="https://tarjih.or.id/"
+        href="https://khgt.muhammadiyah.or.id/"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-3 pt-2.5 border-t border-white/20 flex items-center justify-between group"
