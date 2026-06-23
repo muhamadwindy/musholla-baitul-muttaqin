@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const timeline = [
   {
     year: '1960',
@@ -110,7 +112,7 @@ export default function History() {
                     )}
                     <h3 className="font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 mb-4">
                       {item.details.map((detail) => (
                         <li key={detail} className="flex items-center gap-2 text-xs text-gray-500">
                           <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
@@ -118,6 +120,23 @@ export default function History() {
                         </li>
                       ))}
                     </ul>
+                    {item.highlight && (
+                      <div className="relative w-full h-36 rounded-xl overflow-hidden border border-amber-100">
+                        <Image
+                          src="/images/musholla-prasasti.jpg"
+                          alt="Prasasti peresmian Musholla Baitul Muttaqin oleh Bupati Semarang H. Bambang Guritno"
+                          fill
+                          className="object-cover object-center"
+                          sizes="400px"
+                        />
+                        <div className="absolute inset-0 bg-amber-900/10" />
+                        <div className="absolute bottom-2 left-2 right-2">
+                          <span className="text-[10px] bg-amber-900/70 text-amber-100 px-2 py-0.5 rounded-full font-medium">
+                            Prasasti marmer yang terpasang hingga saat ini
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
