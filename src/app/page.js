@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Hadith from '@/components/Hadith';
 import History from '@/components/History';
+import Gallery from '@/components/Gallery';
 import Programs from '@/components/Programs';
 import Infaq from '@/components/Infaq';
 import Itikaf from '@/components/Itikaf';
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Hadith />
       <History />
+      <Gallery />
       <Programs />
       <Infaq />
       <Itikaf />

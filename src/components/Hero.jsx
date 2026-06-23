@@ -1,29 +1,37 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import PrayerWidget from './PrayerWidget';
 
 const hadiths = [
   {
-    arabic: 'إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَقَامَ الصَّلَاةَ وَآتَى الزَّكَاةَ',
-    translation: 'Sesungguhnya yang memakmurkan masjid-masjid Allah hanyalah orang yang beriman kepada Allah dan hari akhir, serta tetap mendirikan shalat dan menunaikan zakat...',
+    arabic:
+      'إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَقَامَ الصَّلَاةَ وَآتَى الزَّكَاةَ',
+    translation:
+      'Sesungguhnya yang memakmurkan masjid-masjid Allah hanyalah orang yang beriman kepada Allah dan hari akhir, serta tetap mendirikan shalat dan menunaikan zakat...',
     source: 'QS. At-Taubah [9]: 18',
     type: 'Al-Quran',
   },
   {
     arabic: 'مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ فِي الْجَنَّةِ مِثْلَهُ',
-    translation: 'Barangsiapa membangun sebuah masjid karena Allah, maka Allah akan membangunkan untuknya yang semisalnya di surga.',
+    translation:
+      'Barangsiapa membangun sebuah masjid karena Allah, maka Allah akan membangunkan untuknya yang semisalnya di surga.',
     source: 'HR. Bukhari & Muslim',
     type: 'Hadits Shahih',
   },
   {
     arabic: 'رَجُلٌ قَلْبُهُ مُعَلَّقٌ بِالْمَسَاجِدِ',
-    translation: 'Di antara tujuh golongan yang mendapat naungan Allah di hari kiamat adalah "seorang laki-laki yang hatinya selalu terpaut dan mencintai masjid."',
+    translation:
+      'Di antara tujuh golongan yang mendapat naungan Allah di hari kiamat adalah "seorang laki-laki yang hatinya selalu terpaut dan mencintai masjid."',
     source: 'HR. Bukhari & Muslim',
     type: 'Hadits Shahih',
   },
   {
-    arabic: 'مَا تَوَضَّأَ أَحَدُكُمْ فَأَحْسَنَ وُضُوءَهُ ثُمَّ خَرَجَ إِلَى الْمَسْجِدِ إِلَّا كَانَ بِكُلِّ خَطْوَةٍ يَرْفَعُ بِهَا دَرَجَةً',
-    translation: 'Tidaklah seseorang berwudhu dengan sempurna lalu keluar menuju masjid, melainkan dengan setiap langkahnya Allah mengangkat satu derajatnya dan menghapus satu kesalahannya.',
+    arabic:
+      'مَا تَوَضَّأَ أَحَدُكُمْ فَأَحْسَنَ وُضُوءَهُ ثُمَّ خَرَجَ إِلَى الْمَسْجِدِ إِلَّا كَانَ بِكُلِّ خَطْوَةٍ يَرْفَعُ بِهَا دَرَجَةً',
+    translation:
+      'Tidaklah seseorang berwudhu dengan sempurna lalu keluar menuju masjid, melainkan dengan setiap langkahnya Allah mengangkat satu derajatnya dan menghapus satu kesalahannya.',
     source: 'HR. Muslim',
     type: 'Hadits Shahih',
   },
@@ -106,9 +114,8 @@ export default function Hero() {
     if (paused) return;
     const timer = setInterval(() => {
       setActive((prev) => {
-        const next = (prev + 1) % hadiths.length;
         setAnimKey((k) => k + 1);
-        return next;
+        return (prev + 1) % hadiths.length;
       });
     }, 5000);
     return () => clearInterval(timer);
@@ -117,68 +124,117 @@ export default function Hero() {
   return (
     <section
       id="beranda"
-      className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-700"
+      className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden"
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      {/* ── Background photo ── */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/musholla-eksterior-2.jpg"
+          alt="Musholla Baitul Muttaqin"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Green gradient overlay — maintains brand while showing photo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/90 via-green-800/82 to-green-700/78" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-green-950/60 via-transparent to-transparent" />
+      </div>
+
+      {/* ── Islamic pattern overlay ── */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="islamic-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+            <pattern id="hero-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
               <polygon points="40,0 80,20 80,60 40,80 0,60 0,20" fill="none" stroke="white" strokeWidth="1" />
-              <polygon points="40,10 70,25 70,55 40,70 10,55 10,25" fill="none" stroke="white" strokeWidth="0.5" />
-              <circle cx="40" cy="40" r="8" fill="none" stroke="white" strokeWidth="0.5" />
+              <circle cx="40" cy="40" r="8" fill="none" stroke="white" strokeWidth="0.8" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#islamic-pattern)" />
+          <rect width="100%" height="100%" fill="url(#hero-pattern)" />
         </svg>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-10 flex flex-col items-center gap-8">
+      {/* ── Content ── */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-10 flex flex-col gap-8">
 
-        {/* ── Main hero text ── */}
-        <div className="text-center">
-          <div className="mb-3">
-            <span className="text-amber-300 text-3xl sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-              بَيْتُ الْمُتَّقِيْن
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3">
-            Musholla
-            <span className="block text-amber-300">Baitul Muttaqin</span>
-          </h1>
-          <p className="text-green-100 text-sm sm:text-base mb-2">
-            Rumah ibadah dan pusat kegiatan Islam masyarakat Dusun Karang sejak 1960
-          </p>
-          <p className="text-green-200 text-xs sm:text-sm flex items-center justify-center gap-1.5">
-            <svg className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-            </svg>
-            Dusun Karang, RT.02/RW.02, Ujung-Ujung, Pabelan, Kab. Semarang
-          </p>
+        {/* Logo */}
+        <div className="flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="Musholla Baitul Muttaqin"
+            width={280}
+            height={100}
+            className="h-24 w-auto drop-shadow-2xl"
+            priority
+          />
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
-            <a
-              href="#sejarah"
-              className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-green-900 font-semibold px-7 py-3 rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm"
-            >
-              Lihat Sejarah
-            </a>
-            <a
-              href="#lokasi"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/50 hover:border-white text-white hover:bg-white/10 font-semibold px-7 py-3 rounded-xl transition-all text-sm"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        {/* ── Main content + Prayer times ── */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+
+          {/* Left: title + CTAs */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="mb-3">
+              <span
+                className="text-amber-300 text-3xl sm:text-4xl drop-shadow-lg"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                بَيْتُ الْمُتَّقِيْن
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 drop-shadow-lg">
+              Musholla
+              <span className="block text-amber-300">Baitul Muttaqin</span>
+            </h1>
+            <p className="text-green-100 text-sm sm:text-base mb-1.5">
+              Rumah ibadah dan pusat kegiatan Islam masyarakat sejak 1960
+            </p>
+            <p className="text-green-200 text-xs sm:text-sm flex items-center justify-center lg:justify-start gap-1.5 mb-6">
+              <svg className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
-              Lihat Lokasi
-            </a>
+              Dusun Karang, RT.02/RW.02, Ujung-Ujung, Pabelan, Kab. Semarang
+            </p>
+
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center lg:justify-start">
+              <a
+                href="#sejarah"
+                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-green-900 font-semibold px-6 py-3 rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm"
+              >
+                Lihat Sejarah
+              </a>
+              <a
+                href="#lokasi"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white/50 hover:border-white text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-xl transition-all text-sm"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Lihat Lokasi
+              </a>
+              <a
+                href="https://tarjih.or.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl transition-all text-sm"
+              >
+                <svg className="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Kalender KHGT
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Prayer times widget */}
+          <div className="w-full lg:w-auto lg:flex-shrink-0">
+            <PrayerWidget />
           </div>
         </div>
 
         {/* ── Quick highlights ── */}
-        <div className="w-full">
+        <div>
           <p className="text-center text-green-300 text-xs font-semibold uppercase tracking-widest mb-3">
             Fasilitas &amp; Program
           </p>
@@ -187,7 +243,7 @@ export default function Hero() {
               <a
                 key={h.label}
                 href={h.href}
-                className="flex flex-col items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl px-2 py-3 text-center transition-all group cursor-pointer"
+                className="flex flex-col items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl px-2 py-3 text-center transition-all group"
               >
                 <div className="text-amber-300 group-hover:text-amber-200 transition-colors">
                   {h.icon}
@@ -201,11 +257,10 @@ export default function Hero() {
 
         {/* ── Hadith carousel ── */}
         <div
-          className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 sm:p-6"
+          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 sm:p-6"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* Type badge */}
           <div className="flex items-center justify-between mb-3">
             <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30">
               {hadiths[active].type}
@@ -213,7 +268,6 @@ export default function Hero() {
             <span className="text-green-300 text-xs">{hadiths[active].source}</span>
           </div>
 
-          {/* Content with fade animation */}
           <div key={animKey} className="hadith-animate">
             <p
               className="text-amber-200 text-base sm:text-lg leading-loose mb-3 text-right"
@@ -226,7 +280,6 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Navigation dots */}
           <div className="flex items-center justify-center gap-2 mt-4">
             {hadiths.map((_, i) => (
               <button
@@ -234,9 +287,7 @@ export default function Hero() {
                 onClick={() => goTo(i)}
                 aria-label={`Hadith ${i + 1}`}
                 className={`rounded-full transition-all duration-300 ${
-                  i === active
-                    ? 'w-6 h-2 bg-amber-400'
-                    : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                  i === active ? 'w-6 h-2 bg-amber-400' : 'w-2 h-2 bg-white/30 hover:bg-white/50'
                 }`}
               />
             ))}
@@ -245,7 +296,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce">
         <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
